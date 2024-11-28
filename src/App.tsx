@@ -6,7 +6,7 @@ import "./App.css";
 
 
 
-export const App = () => {
+export const App: React.FC = () => {
 	return (
 		<div className="app-container">
 			<header>
@@ -20,4 +20,3 @@ export const App = () => {
 		</div>
 	);
 };
-

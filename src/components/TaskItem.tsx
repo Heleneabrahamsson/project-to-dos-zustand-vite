@@ -1,7 +1,13 @@
 import { useTaskStore } from "../stores/taskStore";
+import { Task } from "../stores/taskStore";
 import "./TaskItem.css";
 
-export const TaskItem = ({ task }) => {
+// Define props type for TaskItem 
+type TaskItemProps = {
+	task: Task;
+};
+
+export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
 	const toggleTask = useTaskStore((state) => state.toggleTask);
 	const removeTask = useTaskStore((state) => state.removeTask);
 	const moveTaskUp = useTaskStore((state) => state.moveTaskUp);

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Modern JavaScript target
+    "module": "ESNext", // Use ESNext module syntax
+    "jsx": "react-jsx", // Use React's JSX syntax
+    "strict": true, // Enable all strict type-checking options
+    "moduleResolution": "node", // Resolve modules like Node.js
+    "esModuleInterop": true, // Allow default imports from CommonJS modules
+    "skipLibCheck": true, // Skip type checking for declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
+    "baseUrl": "./", // Allow absolute imports based on the root directory
+    "paths": { // Shorthand paths for cleaner imports
+      "@stores/*": [
+        "src/stores/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}
