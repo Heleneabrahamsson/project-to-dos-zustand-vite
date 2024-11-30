@@ -1,10 +1,9 @@
 import { useTaskStore } from "../stores/taskStore";
-import { Task } from "../stores/taskStore";
 import { TaskItem } from "./TaskItem";
 import "./TaskList.css";
 
-export const TaskList: React.FC = () => {
-	const tasks: Task[] = useTaskStore((state) => state.tasks) || [];
+export const TaskList = (): JSX.Element => {
+	const tasks = useTaskStore((state) => state.tasks) || [];
 
 	return (
 		<div className="task-list">

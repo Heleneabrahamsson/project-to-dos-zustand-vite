@@ -1,12 +1,10 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-import { useTaskStore, TaskStore } from "../stores/taskStore";
+import { useTaskStore } from "../stores/taskStore";
 import "./AddTaskForm.css";
 
-
-export const AddTaskForm: React.FC = () => {
+export const AddTaskForm = (): JSX.Element => {
 	const [title, setTitle] = useState<string>("");
-	const addTask = useTaskStore((state: TaskStore) => state.addTask);
-
+	const addTask = useTaskStore((state) => state.addTask);
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -17,11 +15,10 @@ export const AddTaskForm: React.FC = () => {
 	};
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setTitle(e.target.value); // Explicitly typed input change event
+		setTitle(e.target.value);
 	};
 
 	return (
-
 		<form className="add-task-form" onSubmit={handleSubmit}>
 			<input
 				type="text"
@@ -30,8 +27,9 @@ export const AddTaskForm: React.FC = () => {
 				placeholder="What Needs to Be Done?"
 				className="task-input"
 			/>
-			<button className="add-task-button" type="submit">+</button>
+			<button className="add-task-button" type="submit">
+				+
+			</button>
 		</form>
 	);
 };
-

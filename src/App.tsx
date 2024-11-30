@@ -4,9 +4,7 @@ import { TaskCount } from "./components/TaskCount";
 import '@fortawesome/fontawesome-free/css/all.css';
 import "./App.css";
 
-
-
-export const App: React.FC = () => {
+export const App = (): JSX.Element => {
 	return (
 		<div className="app-container">
 			<header>

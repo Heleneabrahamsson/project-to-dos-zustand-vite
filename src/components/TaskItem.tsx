@@ -2,12 +2,12 @@ import { useTaskStore } from "../stores/taskStore";
 import { Task } from "../stores/taskStore";
 import "./TaskItem.css";
 
-// Define props type for TaskItem 
+// Defining props type
 type TaskItemProps = {
 	task: Task;
 };
 
-export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+export const TaskItem = ({ task }: TaskItemProps): JSX.Element => {
 	const toggleTask = useTaskStore((state) => state.toggleTask);
 	const removeTask = useTaskStore((state) => state.removeTask);
 	const moveTaskUp = useTaskStore((state) => state.moveTaskUp);
@@ -15,7 +15,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
 
 	return (
 		<div className="task-item-wrapper">
-			{/* Arrow buttons*/}
+			{/* Arrow buttons */}
 			<div className="task-arrows">
 				<button
 					className="move-button"
@@ -52,6 +52,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
 					</span>
 				</label>
 
+				{/* Delete button */}
 				<button
 					className="delete-button"
 					onClick={() => removeTask(task.id)}

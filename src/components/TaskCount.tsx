@@ -1,7 +1,7 @@
 import { useTaskStore } from "../stores/taskStore";
 import "./TaskCount.css";
 
-export const TaskCount: React.FC = () => {
+export const TaskCount = (): JSX.Element => {
 	const tasks = useTaskStore((state) => state.tasks);
 	const completedCount = tasks.filter((task) => task.completed).length;
 	const uncompletedCount = tasks.filter((task) => !task.completed).length;
@@ -13,4 +13,3 @@ export const TaskCount: React.FC = () => {
 		</div>
 	);
 };
-
